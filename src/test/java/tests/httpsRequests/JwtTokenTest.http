@@ -1,0 +1,24 @@
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "password": "admin",
+  "username": "admin"
+}
+
+> {%
+    client.test("Token exists", function() {
+        client.assert(response.body.hasOwnProperty("token"), "Cannot find 'token' option in response");
+    });
+    client.global.set("jwt", response.body.token);
+%}
+###
+
+GET http://85.192.34.140:8080/api/user
+Authorization: Bearer {{jwt}}
+
+> {%
+    client.test("Auth successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}

@@ -1,0 +1,47 @@
+{
+  "gameId": 1,
+  "title": "MyGameWith Aqua",
+  "genre": "multiplayer",
+  "requiredAge": false,
+  "isFree": true,
+  "price": 0.0,
+  "company": "Threadqa",
+  "publish_date": "2022-11-03T16:44:44.144061",
+  "rating": 5,
+  "description": "My game added using Aqua",
+  "tags": [
+    "shooter",
+    "vr",
+    "kids"
+  ],
+  "dlcs": [
+    {
+      "isDlcFree": true,
+      "dlcName": "Random DLC Name Lou Zar",
+      "rating": 5,
+      "description": "Random DLC Description CCs3Ti1f2xjz4xoVuKsv",
+      "price": 0.0,
+      "similarDlc": {
+        "dlcNameFromAnotherGame": "Recommended another game with dlc: St. Bernardus Abt 12",
+        "free": true
+      }
+    },
+    {
+      "isDlcFree": false,
+      "dlcName": "Random DLC Name snail",
+      "rating": 3,
+      "description": "Random DLC Description 0CNCPoD7cxichHOXw8w2",
+      "price": 65.241,
+      "similarDlc": {
+        "dlcNameFromAnotherGame": "Recommended another game with dlc: HopSlam Ale",
+        "free": false
+      }
+    }
+  ],
+  "requirements": {
+    "osName": "Mac OS",
+    "ramGb": 3,
+    "hardDrive": 29,
+    "videoCard": "Nvidea RTX 1000566"
+  }
+}

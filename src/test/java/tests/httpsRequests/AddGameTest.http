@@ -1,0 +1,40 @@
+< {%
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    request.variables.set("local", "var")
+    const randomLogin = "aquaLogin" + getRandomInt(200);
+    client.global.set("login", randomLogin)
+    const randomPassword = "aquaPass" + getRandomInt(200);
+    //request.variables.set("password", randomPassword)
+    client.global.set("password", randomPassword)
+%}
+
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "login": "{{login}}",
+  "pass": "{{password}}"
+}
+
+###
+
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "password": "{{password}}",
+  "username": "{{login}}"
+}
+
+> {%
+    client.global.set("jwt", response.body.token);
+%}
+###
+
+POST {{host}}/user/games
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+< game.json
